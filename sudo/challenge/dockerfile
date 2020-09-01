@@ -1,0 +1,41 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y openssh-server && apt-get install -y sudo && apt-get install -y vim && apt-get install -y gcc && apt-get install -y nano && apt-get install -y php && apt-get install -y python && apt-get install -y libcap2-bin
+
+RUN useradd -m user1 && useradd -m user2 && useradd -m user3 && useradd -m user4 && useradd -m user5 && useradd -m user6 && useradd -m user7 && useradd -m user8 && useradd -m user9
+
+RUN echo "level1\nlevel1" | passwd user1
+RUN echo "fnoerinfreinfaeminfaer23\nfnoerinfreinfaeminfaer23" | passwd user2
+RUN echo "bhyjERgrtegzrgzzerhge325\nbhyjERgrtegzrgzzerhge325" | passwd user3
+RUN echo "hrthtHRTzrthtzhtrght5745\nhrthtHRTzrthtzhtrght5745" | passwd user4
+RUN echo "EGRTZHergtegrthrthrg3534\nEGRTZHergtegrthrthrg3534" | passwd user5
+RUN echo "hrthtrZRGhzrhrtzhtfa9865\nhrthtrZRGhzrhrtzhtfa9865" | passwd user6
+RUN echo "fggerrgrthERgrtgrttg9740\nfggerrgrthERgrtgrttg9740" | passwd user7
+RUN echo "thtrAFegrgtrghHRThf32356\nthtrAFegrgtrghHRThf32356" | passwd user8
+RUN echo "RTHZAZGgrtzzfaemin085467\nRTHZAZGgrtzzfaemin085467" | passwd user9
+
+RUN echo 'user1 ALL=(user2) NOPASSWD:/bin/vim' >> /etc/sudoers
+RUN echo "flag-84b218d3e4857d99c2f23994cb7c9a45" > /home/user2/flag && chown user2:user2 /home/user2/flag && chmod 400 /home/user2/flag
+
+RUN echo 'user2 ALL=(user3) NOPASSWD:/bin/find' >> /etc/sudoers
+RUN echo "flag-f892ad5267718bb31a6c51a3e9514a2c" > /home/user3/flag && chown user3:user3 /home/user3/flag && chmod 400 /home/user3/flag
+
+RUN echo 'user3 ALL=(user4) NOPASSWD:/bin/ssh' >> /etc/sudoers
+RUN echo "flag-a13021d4279cb5f93d5502e80e0ea595" > /home/user4/flag && chown user4:user4 /home/user4/flag && chmod 400 /home/user4/flag
+
+RUN echo 'user4 ALL=(user5) NOPASSWD:/bin/awk' >> /etc/sudoers
+RUN echo "flag-fb24b940b974eef0b50972874345bb23" > /home/user5/flag && chown user5:user5 /home/user5/flag && chmod 400 /home/user5/flag
+
+RUN echo 'user5 ALL=(user6) NOPASSWD:/bin/php' >> /etc/sudoers
+RUN echo "flag-9328af9636bb3add707425d0a89494f5" > /home/user6/flag && chown user6:user6 /home/user6/flag && chmod 400 /home/user6/flag
+
+RUN echo 'user6 ALL=(user7) NOPASSWD:/bin/python' >> /etc/sudoers
+RUN echo "flag-4a69013be9f08507faccbecfd71a06e9" > /home/user7/flag && chown user7:user7 /home/user7/flag && chmod 400 /home/user7/flag
+
+RUN echo 'user7 ALL=(user8) NOPASSWD:/bin/tar' >> /etc/sudoers
+RUN echo "flag-e1ba042520a07918e064961290fe9b9e" > /home/user8/flag && chown user8:user8 /home/user8/flag && chmod 400 /home/user8/flag
+
+RUN echo 'user8 ALL=(root) NOPASSWD:/sbin/setcap' >> /etc/sudoers
+RUN echo "flag-gre533ff20a07918e0fezfzea2442ddf" > /home/user9/flag && chown user9:user9 /home/user9/flag && chmod 000 /home/user9/flag
+
+EXPOSE 22
