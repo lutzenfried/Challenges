@@ -4,10 +4,10 @@ RUN apt-get update && apt-get install -y openssh-server && apt-get install -y su
 
 RUN useradd -m user1 && useradd -m user2
 RUN echo "library\nlibrary" | passwd user1
-RUN echo "fzefzbfknzeo3GFDEF23\nfzefzbfknzeo3GFDEF23" | passwd user2
+RUN echo "LRh2IfginI00FvbHMK\nLRh2IfginI00FvbHMK" | passwd user2
 
 RUN echo 'Defaults env_reset, env_keep+=LD_PRELOAD' >> /etc/sudoers
 RUN echo 'user1 ALL=(user2) NOPASSWD:/bin/pwd' >> /etc/sudoers
-RUN echo "flag-713e69b8ccf003baaa5c0e91d61e6fbc" > /home/user2/flag && chown user2:user2 /home/user2/flag && chmod 400 /home/user2/flag
+RUN echo "flag-DCE91F03B91CE58901569B651DA5D2CB" > /home/user2/flag && chown user2:user2 /home/user2/flag && chmod 400 /home/user2/flag
 
 EXPOSE 22
